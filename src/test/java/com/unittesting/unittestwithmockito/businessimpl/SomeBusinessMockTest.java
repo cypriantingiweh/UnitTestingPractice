@@ -5,10 +5,18 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import org.junit.Test;
 import com.unittesting.unittestwithmockito.data.SomeDataService;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class SomeBusinessMockTest {
-	
+
+	@InjectMocks
 	SomeBusinessImpl business = new SomeBusinessImpl();
+
+	@Mock
 	SomeDataService somedataservicemock = mock(SomeDataService.class);
 	
 	@Test

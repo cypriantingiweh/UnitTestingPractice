@@ -7,24 +7,29 @@ import org.junit.Test;
 import com.unittesting.unittestwithmockito.data.SomeDataService;
 
 public class SomeBusinessStudTest {
+
+	SomeBusinessImpl business = new SomeBusinessImpl();
+
 	
 	@Test
 	public void calculateSumSomeData_Basic() {
-		SomeBusinessImpl business = new SomeBusinessImpl();
 		business.setSomedata(new SomeBusinessStud());
-		int ActualResult = business.calculateSumSomeDataService();
-		int expectedResult = 6;
-		assertEquals(expectedResult, ActualResult);
+		assertEquals(6, business.calculateSumSomeDataService());
 		
 	}
 	
 	@Test
 	public void calculateSum_empty() {
-		SomeBusinessImpl business = new SomeBusinessImpl();
-		int ActualResult = business.calculateSum(new int [] {5});
-		int expectedResult = 5;
-		assertEquals(expectedResult, ActualResult);
+        business.setSomedata(new SomeBusinessStud());
+		assertEquals(0, business.calculateSum(new int [] {}));
 		
 	}
+
+    @Test
+    public void calculateSum_OneValue() {
+        business.setSomedata(new SomeBusinessStud());
+        assertEquals(5, business.calculateSum(new int [] {5}));
+
+    }
 
 }
