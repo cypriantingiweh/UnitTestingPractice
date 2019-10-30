@@ -1,10 +1,8 @@
 package com.unittesting.unittestwithmockito.businessimpl;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
-import com.unittesting.unittestwithmockito.data.SomeDataService;
+import static org.junit.Assert.assertEquals;
 
 public class SomeBusinessStudTest {
 
